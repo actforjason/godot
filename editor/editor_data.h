@@ -145,6 +145,7 @@ private:
 	int last_created_scene = 1;
 
 	bool _find_updated_instances(Node *p_root, Node *p_node, HashSet<String> &checked_paths);
+	bool _find_specified_instance(Node *p_root, Node *p_node, const String &p_instance_path);
 
 	HashMap<StringName, String> _script_class_icon_paths;
 	HashMap<String, StringName> _script_class_file_to_path;
@@ -223,6 +224,7 @@ public:
 	NodePath get_edited_scene_live_edit_root();
 	bool check_and_update_scene(int p_idx);
 	bool reload_scene_from_memory(int p_idx, bool p_mark_unsaved);
+	void update_scenes_with_instance(const String &p_instance_path);
 	void move_edited_scene_to_index(int p_idx);
 
 	bool call_build();
